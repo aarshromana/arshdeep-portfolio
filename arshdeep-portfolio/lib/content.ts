@@ -71,9 +71,9 @@ export const projects: Project[] = [
   results:"Live and public. It is a new site with early, small traffic, so I am not claiming growth numbers. Search indexing is still building.",
   learning:"A new site needs weeks to earn trust with search engines. Content and internal links come first, and traffic follows slowly.",
   gallery:[
-   {src:"/work/income-toolkit/shot-home.webp",src:"/work/income-toolkit/shot-home.webp", href:"https://income-toolkit-sigma.vercel.app/" alt:"Income Toolkit homepage with headline and calculator cards",caption:"Homepage: one clear promise, two calls to action and the four most-used calculators up front."},
-   {src:"/work/income-toolkit/shot-ctc.webp",src:"/work/income-toolkit/shot-ctc.webp", href:"https://income-toolkit-sigma.vercel.app/ctc-calculator", alt:"Income Toolkit CTC calculator form",caption:"CTC calculator: breaks a CTC into Basic, HRA, PF and special allowance, with optional advanced settings."},
-   {src:"/work/income-toolkit/shot-rate.webp",src:"/work/income-toolkit/shot-rate.webp",href:"https://income-toolkit-sigma.vercel.app/freelancer/rate-calculator", alt:"Income Toolkit freelance rate calculator form",caption:"Freelance rate calculator: works out the hourly, daily and monthly rate needed to hit an income target."}], wide:true },
+      {src:"/work/income-toolkit/shot-home.webp",href:"https://income-toolkit-sigma.vercel.app/",alt:"Income Toolkit homepage with headline and calculator cards",caption:"Homepage: one clear promise, two calls to action and the four most-used calculators up front."},
+   {src:"/work/income-toolkit/shot-ctc.webp",href:"https://income-toolkit-sigma.vercel.app/salary/ctc-calculator",alt:"Income Toolkit CTC calculator form",caption:"CTC calculator: breaks a CTC into Basic, HRA, PF and special allowance, with optional advanced settings."},
+   {src:"/work/income-toolkit/shot-rate.webp",href:"https://income-toolkit-sigma.vercel.app/freelancer/rate-calculator",alt:"Income Toolkit freelance rate calculator form",caption:"Freelance rate calculator: works out the hourly, daily and monthly rate needed to hit an income target."}], wide:true },
 
 { slug:"rentalease-meta-ads", name:"RentalEase", kind:"Meta Ads Campaign Strategy", industry:"Rental / Consumer digital marketing",
   services:["Meta Ads","Audience research","Funnel design"], badge:"Campaign strategy project", cover:"/work/rentalease/logo.webp", contain:true,
