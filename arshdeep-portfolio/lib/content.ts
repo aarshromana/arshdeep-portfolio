@@ -3,7 +3,7 @@ export const SITE = { name:"Arshdeep Singh", title:"Digital Marketing & Growth S
   url:"https://aarshromana-arshdeep-portfolio-zcph.vercel.app", // TODO: replace after first Vercel deploy
   email:"aromana1313@gmail.com", linkedin:"https://www.linkedin.com/in/arshdeep-romana-b470b8290/", resume:"/Arshdeep_Singh_Resume.pdf" };
 
-export type Img = { src:string; alt:string; caption?:string };
+export type Img = { src:string; alt:string; caption?:string; href?:string };
 export type Project = { slug:string; name:string; kind:string; industry:string; services:string[]; badge:string; summary:string; cover?:string;
   overview:string; objective:string; audience:string; role:string; strategy:string[]; execution:string[]; content:string; tools:string[]; results:string; learning:string; gallery?:Img[]; link?:string; contain?:boolean; wide?:boolean; videos?:{title:string;url:string;note?:string}[] };
 
@@ -71,9 +71,9 @@ export const projects: Project[] = [
   results:"Live and public. It is a new site with early, small traffic, so I am not claiming growth numbers. Search indexing is still building.",
   learning:"A new site needs weeks to earn trust with search engines. Content and internal links come first, and traffic follows slowly.",
   gallery:[
-   {src:"/work/income-toolkit/shot-home.webp",alt:"Income Toolkit homepage with headline and calculator cards",caption:"Homepage: one clear promise, two calls to action and the four most-used calculators up front."},
-   {src:"/work/income-toolkit/shot-ctc.webp",alt:"Income Toolkit CTC calculator form",caption:"CTC calculator: breaks a CTC into Basic, HRA, PF and special allowance, with optional advanced settings."},
-   {src:"/work/income-toolkit/shot-rate.webp",alt:"Income Toolkit freelance rate calculator form",caption:"Freelance rate calculator: works out the hourly, daily and monthly rate needed to hit an income target."}], wide:true },
+   {src:"/work/income-toolkit/shot-home.webp",src:"/work/income-toolkit/shot-home.webp", href:"https://income-toolkit-sigma.vercel.app/" alt:"Income Toolkit homepage with headline and calculator cards",caption:"Homepage: one clear promise, two calls to action and the four most-used calculators up front."},
+   {src:"/work/income-toolkit/shot-ctc.webp",src:"/work/income-toolkit/shot-ctc.webp", href:"https://income-toolkit-sigma.vercel.app/ctc-calculator", alt:"Income Toolkit CTC calculator form",caption:"CTC calculator: breaks a CTC into Basic, HRA, PF and special allowance, with optional advanced settings."},
+   {src:"/work/income-toolkit/shot-rate.webp",src:"/work/income-toolkit/shot-rate.webp",href:"https://income-toolkit-sigma.vercel.app/freelancer/rate-calculator", alt:"Income Toolkit freelance rate calculator form",caption:"Freelance rate calculator: works out the hourly, daily and monthly rate needed to hit an income target."}], wide:true },
 
 { slug:"rentalease-meta-ads", name:"RentalEase", kind:"Meta Ads Campaign Strategy", industry:"Rental / Consumer digital marketing",
   services:["Meta Ads","Audience research","Funnel design"], badge:"Campaign strategy project", cover:"/work/rentalease/logo.webp", contain:true,
