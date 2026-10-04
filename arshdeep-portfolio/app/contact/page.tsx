@@ -1,0 +1,5 @@
+import type {Metadata} from "next";import {SITE} from "@/lib/content";import {Wrap,Heading,Btn} from "@/components/ui";
+export const metadata:Metadata={title:"Contact",description:"Get in touch with Arshdeep Singh about digital marketing roles or projects.",alternates:{canonical:"/contact"}};
+export default function Contact(){return(<Wrap className="max-w-2xl py-16"><Heading title="Let's Work Together" sub="Interested in working together or discussing a digital marketing opportunity? I'd be happy to connect."/>
+<div className="space-y-3"><p><span className="text-sm text-slate-500">Email</span><br/><a className="font-semibold text-brand" href={`mailto:${SITE.email}`}>{SITE.email}</a></p><p><span className="text-sm text-slate-500">LinkedIn</span><br/><a className="font-semibold text-brand" href={SITE.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/arshdeep-romana-b470b8290</a></p></div>
+<div className="mt-8 flex gap-3"><Btn href={`mailto:${SITE.email}`}>Send an email</Btn><Btn href={SITE.resume} alt>Download Resume</Btn></div></Wrap>)}

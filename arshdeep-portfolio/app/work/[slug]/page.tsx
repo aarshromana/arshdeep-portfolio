@@ -1,0 +1,22 @@
+import type {Metadata} from "next";import Image from "next/image";import Link from "next/link";import {notFound} from "next/navigation";import {projects,bySlug} from "@/lib/content";import {Wrap,Btn} from "@/components/ui";
+export const dynamicParams=false;
+export function generateStaticParams(){return projects.map(p=>({slug:p.slug}))}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const p=bySlug(slug);if(!p)return{};return{title:`${p.name} — ${p.kind}`,description:p.summary,alternates:{canonical:`/work/${p.slug}`}}}
+const L=({t,children}:{t:string;children:React.ReactNode})=><section className="grid gap-2 border-t border-slate-200 py-6 md:grid-cols-[180px_1fr] md:gap-8"><h2 className="text-sm font-semibold uppercase tracking-wide text-brand">{t}</h2><div className="text-slate-700">{children}</div></section>;
+const Ul=({a}:{a:string[]})=><ul className="list-disc space-y-1 pl-5">{a.map(x=><li key={x}>{x}</li>)}</ul>;
+export default async function Case({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=bySlug(slug);if(!p)notFound();
+const i=projects.indexOf(p);const next=projects[(i+1)%projects.length];
+return(<Wrap className="max-w-4xl py-14"><Link href="/work" className="text-sm text-brand">← All work</Link>
+<p className="mt-6 inline-block rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-800">{p.badge}</p>
+<h1 className="mt-3 text-4xl font-bold text-navy">{p.name}</h1><p className="mt-1 text-lg text-brand">{p.kind}</p><p className="mt-3 text-slate-600">{p.summary}</p>
+{p.link&&<div className="mt-5"><Btn href={p.link} ext>Visit the live site ↗</Btn></div>}
+<div className="mt-8">
+<L t="Overview"><p>{p.overview}</p></L><L t="Industry"><p>{p.industry}</p></L><L t="Objective"><p>{p.objective}</p></L><L t="Target audience"><p>{p.audience}</p></L><L t="My role"><p>{p.role}</p></L>
+<L t="Strategy"><Ul a={p.strategy}/></L><L t="Execution"><Ul a={p.execution}/></L>
+{p.slug==="rentalease-meta-ads"&&<L t="Funnel"><div className="grid gap-2 sm:grid-cols-5">{["Campaign","Ad set","Creative","Landing page","Lead"].map((s,k)=><div key={s} className="rounded-lg bg-mist p-3 text-center text-sm font-semibold text-navy">{s}{k<4&&<span className="hidden sm:inline"> →</span>}</div>)}</div><p className="mt-3 text-sm">Awareness → Consideration → Conversion</p></L>}
+<L t="Content approach"><p>{p.content}</p></L>
+{p.gallery&&<L t="Selected work"><div className={`grid gap-5 ${p.wide?"":"sm:grid-cols-2"}`}>{p.gallery.map(g=><figure key={g.src}><div className={`relative ${p.wide?"aspect-[2/1]":"aspect-square"} overflow-hidden rounded-lg border bg-mist`}><Image src={g.src} alt={g.alt} fill sizes="(min-width:640px) 400px,100vw" className="object-cover object-top" loading="lazy"/></div><figcaption className="mt-2 text-sm text-slate-600">{g.caption}</figcaption></figure>)}</div></L>}
+{p.videos&&<L t="Videos"><p className="mb-4 text-sm">Short videos I worked on for the SMSF Audits LinkedIn page. They open on LinkedIn.</p><ul className="grid gap-3 sm:grid-cols-2">{p.videos.map(v=><li key={v.url}><a href={v.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between rounded-lg border border-slate-200 p-4 hover:border-brand"><span><span className="block font-semibold text-navy">{v.title}</span>{v.note&&<span className="text-sm text-slate-500">{v.note}</span>}</span><span className="text-sm font-semibold text-brand">Watch on LinkedIn ↗</span></a></li>)}</ul></L>}
+<L t="Tools"><div className="flex flex-wrap gap-2">{p.tools.map(t=><span key={t} className="rounded-full bg-mist px-3 py-1 text-sm">{t}</span>)}</div></L>
+<L t="Results"><p className="rounded-lg bg-mist p-4">{p.results}</p></L><L t="Key learning"><p>{p.learning}</p></L></div>
+<div className="mt-10 flex justify-between border-t pt-6 text-sm"><Link href="/work" className="text-slate-600">All case studies</Link><Link href={`/work/${next.slug}`} className="font-semibold text-brand">Next: {next.name} →</Link></div></Wrap>)}

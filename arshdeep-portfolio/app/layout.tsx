@@ -1,0 +1,5 @@
+import type {Metadata} from "next";import {Inter} from "next/font/google";import "./globals.css";import Navbar from "@/components/Navbar";import {Footer} from "@/components/ui";import {SITE} from "@/lib/content";
+const inter=Inter({subsets:["latin"],variable:"--font-inter",display:"swap"});
+const t=`${SITE.name} — ${SITE.title}`;const d="Digital marketing portfolio of Arshdeep Singh: social media, content, SEO, Google and Meta Ads, and lead generation case studies.";
+export const metadata:Metadata={metadataBase:new URL(SITE.url),title:{default:t,template:`%s | ${SITE.name}`},description:d,alternates:{canonical:"/"},openGraph:{title:t,description:d,type:"website",url:SITE.url,siteName:SITE.name},twitter:{card:"summary",title:t,description:d}};
+export default function Root({children}:{children:React.ReactNode}){return(<html lang="en" className={inter.variable}><body className="font-sans"><a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:p-3">Skip to content</a><Navbar/><main id="main">{children}</main><Footer/>{/* Analytics: add GA4 / GTM script here later */}</body></html>)}
