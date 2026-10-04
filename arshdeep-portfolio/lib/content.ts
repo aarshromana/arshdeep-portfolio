@@ -1,6 +1,6 @@
 export const SITE = { name:"Arshdeep Singh", title:"Digital Marketing & Growth Specialist",
   tagline:"Social Media • Content • SEO • Performance Marketing • Lead Generation",
-  url:"https://YOUR-SITE.vercel.app", // TODO: replace after first Vercel deploy
+  url:"https://aarshromana-arshdeep-portfolio.vercel.app/", // TODO: replace after first Vercel deploy
   email:"aromana1313@gmail.com", linkedin:"https://www.linkedin.com/in/arshdeep-romana-b470b8290/", resume:"/Arshdeep_Singh_Resume.pdf" };
 
 export type Img = { src:string; alt:string; caption?:string };
