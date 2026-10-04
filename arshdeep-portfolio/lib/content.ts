@@ -16,7 +16,7 @@ export const projects: Project[] = [
   overview:"MRR Global Services helps students, graduates and working professionals with career readiness: resume strategy, interview preparation, personal branding and mentoring. I created social content and LinkedIn creatives to communicate that offer clearly.",
   objective:"Make a service business feel credible and approachable on LinkedIn, and give every post one clear next step.",
   audience:"Students, fresh graduates, career-gap returners and early-career professionals looking for direction.",
-  role:"Planned content angles and created the creatives and messaging. (Confirm exact scope with MRR before publishing.)",
+  role:"Planned content angles and created the creatives and messaging.",
   strategy:["Lead with a problem the audience already feels (standing out, career gaps, interview nerves), then show the service as the answer.","Keep one idea per post, with a short headline and a single call to action.","Use a consistent navy and cyan look so the feed reads as one brand."],
   execution:["Designed a set of posts in 4:5 portrait format for LinkedIn feeds.","Wrote the headline, supporting line and CTA for each post.","Built a LinkedIn cover banner that states the brand promise at a glance."],
   content:"Pillars: career readiness, interview preparation, future skills and global opportunities. Formats: single-image posts, a skills infographic and a profile banner.",
